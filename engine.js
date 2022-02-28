@@ -102,3 +102,5 @@ document.onkeydown = function (event) {
         case 32:
         shoot();
       }};
+
+window.setInterval(fake3D, 10);
