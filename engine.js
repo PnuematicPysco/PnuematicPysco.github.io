@@ -2,10 +2,25 @@ var monsterId = [];
 var monsterShot = [];
 var monsterX = [];
 var monsterZ = [];
+var monsters = 1;
 var x = 0;
 var z = 0;
 var rotate = 0;
 
+function createMonster(){
+ var monster = document.createElement("img");
+  monster.setAttribute("id", "monster" + monsters);
+  monster.setAttribute("scr", "monster1.png");
+  monsterId.push("monster1");
+  monsters++;
+}
+function loadMonsters(){
+var i;
+for(i = 0;i < monsters;i++){
+ createMonster();
+ //you have to fillout the array on the proper place for the proper monster beforehand.
+}
+}
 function fake3D(){
 var i;
 for(i = 0;i < monsterId.length;i++){
