@@ -16,9 +16,9 @@ function createMonster(){
 }
 function loadMonsters(){
 var i;
-for(i = 0;i < monsters;i++){
+for(i = 0;i < monsterX.length();i++){
  createMonster();
- //you have to fillout the array on the proper place for the proper monster beforehand.
+ //you have to fillout the array on the proper place for the proper monster beforehand, exept for monsterId and monsters.
 }
 }
 function fake3D(){
