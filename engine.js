@@ -43,6 +43,7 @@ function createMonster(){
   var randomZ = Math.floor(Math.random() * 20000) - 10000;
   monsterX.push(randomX);
   monsterZ.push(randomZ);
+  monsterShot.push("notShot");
   monsterId.push("monster" + monsters);
   monsters++;
 }
@@ -124,9 +125,8 @@ monster.style.width = ""+graphicZ + graphicZ + graphicZ+"px";
 var oppositeRotate = x - monsterX[i] - rotate;
 monster.style.transform = "translateX("+oppositeRotate + oppositeRotate + oppositeRotate+"px)";
 }
-}else{
-var monster = document.getElementById(monsterId[i]);
-monster.style.display = "none";
+if(monsterShot[i] == "Shot"){
+monster.style.scr = "bleedingMonster.png";
 }
 }
 }
