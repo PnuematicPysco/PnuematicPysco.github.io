@@ -21,6 +21,50 @@ for(i = 0;i < monsterX.length();i++){
  //you have to fillout the array on the proper place for the proper monster beforehand, exept for monsterId and monsters.
 }
 }
+
+function moveMonsters(){
+var i;
+for(i = 0;i < monsterX.length();i++){
+if(monsterX[i] > x){
+var j;
+for(j = 0;j < 100;j++){
+setTimeout(function(){
+monsterX[i]++;
+}, 10);
+}
+}else{
+var k;
+for(k = 0;k < 100;k++){
+setTimeout(function(){
+monsterX[i]--;
+}, 10);
+}
+}
+if(monsterZ[i] > z){
+var l;
+for(l = 0;l < 100;l++){
+setTimeout(function(){
+monsterZ[i]++;
+}, 10);
+}
+}else{
+ var m;
+for(m = 0;m < 100;m++){
+setTimeout(function(){
+monsterZ[i]--;
+}, 10);
+}
+}
+} 
+if(monsterZ[i] < z + 50){
+if(monsterX[i] < x + 50){
+if(monsterZ[i] > z - 50){
+if(monsterX[i] > x - 50){
+var body = document.getElementById("world");
+body.style.display = "none";
+}}}}
+}
+
 function fake3D(){
 var i;
 for(i = 0;i < monsterId.length;i++){
@@ -117,5 +161,6 @@ document.onkeydown = function (event) {
         case 32:
         shoot();
       }};
-
-window.setInterval(fake3D, 10);
+loadMonsters();
+window.setInterval(fake3D, 1);
+window.setInterval(moveMonster, monsterX.length() * 1000);
