@@ -17,6 +17,7 @@ function createObjects(){
  for(i = 0;i < objects;i++){
  var object = document.createElement("img");
  object.setAttribute("id", "object" + i);
+ object.setAttribute("style", "bottom: 0");
  var randomNum = Math.floor(Math.random() * 2);
  if(randomNum == 0){
   object.setAttribute("scr", "skyscrapper.png");
@@ -39,6 +40,7 @@ function createMonster(){
  var monster = document.createElement("img");
   monster.setAttribute("id", "monster" + monsters);
   monster.setAttribute("scr", "monster1.png");
+  monster.setAttribute("style", "bottom: 0");
  var randomX = Math.floor(Math.random() * 20000) - 10000;
   var randomZ = Math.floor(Math.random() * 20000) - 10000;
   monsterX.push(randomX);
@@ -103,14 +105,17 @@ function fake3D(){
 var i;
 for(i = 0;i < totalMonsters;i++){
 var monster = document.getElementById(monsterId[i]);
+var monsterSize = 0;
 if(monsterZ[i] > z){
 var graphicZ = monsterZ[i] - z - 500;//make move and pos (num * 5) to balance it out
 if(graphicZ > 0){
 monster.style.height = ""+graphicZ - graphicZ - graphicZ+"px";
 monster.style.width = ""+graphicZ - graphicZ - graphicZ+"px";
+monsterSize = graphicZ - graphicZ - graphicZ;
 }else{
 monster.style.height = ""+graphicZ + graphicZ + graphicZ+"px";
 monster.style.width = ""+graphicZ + graphicZ + graphicZ+"px";
+monsterSize = graphicZ + graphicZ + graphicZ;
 }
 monster.style.transform = "translateX("+x - monsterX[i] - rotate+"px)";
 }else{
@@ -118,15 +123,19 @@ var graphicZ = monsterZ[i] - z + 500;//make move and pos (num * 5) to balance it
 if(graphicZ > 0){
 object.style.height = ""+graphicZ - graphicZ - graphicZ+"px";
 monster.style.width = ""+graphicZ - graphicZ - graphicZ+"px";
+monsterSize = graphicZ - graphicZ - graphicZ;
 }else{
 monster.style.height = ""+graphicZ + graphicZ + graphicZ+"px";
 monster.style.width = ""+graphicZ + graphicZ + graphicZ+"px";
+monsterSize = graphicZ + graphicZ + graphicZ;
 }
 var oppositeRotate = x - monsterX[i] - rotate;
 monster.style.transform = "translateX("+oppositeRotate + oppositeRotate + oppositeRotate+"px)";
 }
 if(monsterShot[i] == "Shot"){
 monster.style.scr = "bleedingMonster.png";
+monster.style.height = ""+monsterSize * 0.3+"px";
+monster.style.width = ""+monsterSize+"px";
 }
 }
 }
