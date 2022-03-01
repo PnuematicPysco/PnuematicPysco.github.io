@@ -21,7 +21,7 @@ function createObjects(){
   object.setAttribute("scr", "skyscrapper.png");
  }
  if(randomNum == 1){
- object.setAttribute("scr", "burningcar.jpeg");
+ object.setAttribute("scr", "burningcar.jpg");
  }
  if(randomNum == 2){
   object.setAttribute("scr", "wallPixel.jpeg");
