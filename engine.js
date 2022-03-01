@@ -17,7 +17,7 @@ function createObjects(){
  for(i = 0;i < objects;i++){
  var object = document.createElement("img");
  object.setAttribute("id", "object" + i);
- object.setAttribute("style", "bottom: 0");
+ object.setAttribute("style", "bottom: 200px");
  var randomNum = Math.floor(Math.random() * 2);
  if(randomNum == 0){
   object.setAttribute("scr", "skyscrapper.png");
@@ -40,7 +40,7 @@ function createMonster(){
  var monster = document.createElement("img");
   monster.setAttribute("id", "monster" + monsters);
   monster.setAttribute("scr", "monster1.png");
-  monster.setAttribute("style", "bottom: 0");
+  monster.setAttribute("style", "bottom: 200px");
  var randomX = Math.floor(Math.random() * 20000) - 10000;
   var randomZ = Math.floor(Math.random() * 20000) - 10000;
   monsterX.push(randomX);
