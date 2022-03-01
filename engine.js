@@ -3,6 +3,7 @@ var monsterShot = [];
 var monsterX = [];
 var monsterZ = [];
 var monsters = 1;
+var totalMonsters = 1;
 var objectId = [];
 var objectX = [];
 var objectZ = [];
@@ -38,12 +39,16 @@ function createMonster(){
  var monster = document.createElement("img");
   monster.setAttribute("id", "monster" + monsters);
   monster.setAttribute("scr", "monster1.png");
-  monsterId.push("monster1");
+ var randomX = Math.floor(Math.random() * 20000) - 10000;
+  var randomZ = Math.floor(Math.random() * 20000) - 10000;
+  monsterX.push(randomX);
+  monsterZ.push(randomZ);
+  monsterId.push("monster" + monsters);
   monsters++;
 }
 function loadMonsters(){
 var i;
-for(i = 0;i < monsterX.length();i++){
+for(i = 0;i < totalMonsters;i++){
  createMonster();
  //you have to fillout the array on the proper place for the proper monster beforehand, exept for monsterId and monsters.
 }
@@ -51,7 +56,7 @@ for(i = 0;i < monsterX.length();i++){
 
 function moveMonsters(){
 var i;
-for(i = 0;i < monsterX.length();i++){
+for(i = 0;i < totalMonsters;i++){
 if(monsterX[i] > x){
 var j;
 for(j = 0;j < 100;j++){
@@ -83,18 +88,19 @@ monsterZ[i]--;
 }
 }
 } 
+if(monsterShot[i] == "notShot"){
 if(monsterZ[i] < z + 50){
 if(monsterX[i] < x + 50){
 if(monsterZ[i] > z - 50){
 if(monsterX[i] > x - 50){
 var body = document.getElementById("world");
 body.style.display = "none";
-}}}}
+}}}}}
 }
 
 function fake3D(){
 var i;
-for(i = 0;i < monsterId.length;i++){
+for(i = 0;i < totalMonsters;i++){
 var monster = document.getElementById(monsterId[i]);
 if(monsterZ[i] > z){
 var graphicZ = monsterZ[i] - z - 500;//make move and pos (num * 5) to balance it out
@@ -157,7 +163,7 @@ object.style.transform = "translateX("+oppositeRotate + oppositeRotate + opposit
 
 function shoot(){
 var i;
-for(i = 0;i < monsterId.length;i++){
+for(i = 0;i < totalMonsters;i++){
 var monster = document.getElementById(monsterId[i]);
 var Rotate2 = x - monsterX[i] - rotate;
 var oppositeRotate = Rotate2 + Rotate2 + Rotate2;
@@ -221,4 +227,4 @@ loadMonsters();
 createObjects();
 window.setInterval(fake3D, 1);
 window.setInterval(object3D, 1);
-window.setInterval(moveMonster, monsterX.length() * 1000);
+window.setInterval(moveMonster, totalMonsters * 1000);
