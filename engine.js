@@ -3,9 +3,36 @@ var monsterShot = [];
 var monsterX = [];
 var monsterZ = [];
 var monsters = 1;
+var objectId = [];
+var objectX = [];
+var objectZ = [];
+var objects = 1;
 var x = 0;
 var z = 0;
 var rotate = 0;
+
+function createObjects(){
+ var i;
+ for(i = 0;i < objects;i++){
+ var object = document.createElement("img");
+ object.setAttribute("id", "object" + i);
+ var randomNum = Math.floor(Math.random() * 2);
+ if(randomNum == 0){
+  object.setAttribute("scr", "skyscrapper.png");
+ }
+ if(randomNum == 1){
+ object.setAttribute("scr", "burningcar.jpeg");
+ }
+ if(randomNum == 2){
+  object.setAttribute("scr", "wallPixel.jpeg");
+ }
+  var randomX = Math.floor(Math.random() * 20000) - 10000;
+  var randomZ = Math.floor(Math.random() * 20000) - 10000;
+  objectX.push(randomX);
+  objectZ.push(randomZ);
+  objectId.push("object" + i);
+ }
+}
 
 function createMonster(){
  var monster = document.createElement("img");
@@ -68,7 +95,6 @@ body.style.display = "none";
 function fake3D(){
 var i;
 for(i = 0;i < monsterId.length;i++){
-if(monsterShot[i] == "notShot"){
 var monster = document.getElementById(monsterId[i]);
 if(monsterZ[i] > z){
 var graphicZ = monsterZ[i] - z - 500;//make move and pos (num * 5) to balance it out
@@ -83,7 +109,7 @@ monster.style.transform = "translateX("+x - monsterX[i] - rotate+"px)";
 }else{
 var graphicZ = monsterZ[i] - z + 500;//make move and pos (num * 5) to balance it out
 if(graphicZ > 0){
-monster.style.height = ""+graphicZ - graphicZ - graphicZ+"px";
+object.style.height = ""+graphicZ - graphicZ - graphicZ+"px";
 monster.style.width = ""+graphicZ - graphicZ - graphicZ+"px";
 }else{
 monster.style.height = ""+graphicZ + graphicZ + graphicZ+"px";
@@ -95,6 +121,36 @@ monster.style.transform = "translateX("+oppositeRotate + oppositeRotate + opposi
 }else{
 var monster = document.getElementById(monsterId[i]);
 monster.style.display = "none";
+}
+}
+}
+
+
+function object3D(){
+var i;
+for(i = 0;i < objects;i++){
+var object = document.getElementById(objectId[i]);
+if(objectsZ[i] > z){
+var graphicZ = objectsZ[i] - z - 500;//make move and pos (num * 5) to balance it out
+if(graphicZ > 0){
+object.style.height = ""+graphicZ - graphicZ - graphicZ+"px";
+object.style.width = ""+graphicZ - graphicZ - graphicZ+"px";
+}else{
+object.style.height = ""+graphicZ + graphicZ + graphicZ+"px";
+object.style.width = ""+graphicZ + graphicZ + graphicZ+"px";
+}
+object.style.transform = "translateX("+x - objectX[i] - rotate+"px)";
+}else{
+var graphicZ = objectZ[i] - z + 500;//make move and pos (num * 5) to balance it out
+if(graphicZ > 0){
+object.style.height = ""+graphicZ - graphicZ - graphicZ+"px";
+object.style.width = ""+graphicZ - graphicZ - graphicZ+"px";
+}else{
+object.style.height = ""+graphicZ + graphicZ + graphicZ+"px";
+object.style.width = ""+graphicZ + graphicZ + graphicZ+"px";
+}
+var oppositeRotate = x - objectX[i] - rotate;
+object.style.transform = "translateX("+oppositeRotate + oppositeRotate + oppositeRotate+"px)";
 }
 }
 }
@@ -162,5 +218,7 @@ document.onkeydown = function (event) {
         shoot();
       }};
 loadMonsters();
+createObjects();
 window.setInterval(fake3D, 1);
+window.setInterval(object3D, 1);
 window.setInterval(moveMonster, monsterX.length() * 1000);
