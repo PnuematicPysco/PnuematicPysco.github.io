@@ -13,6 +13,7 @@ var z = 0;
 var rotate = 0;
 var challengeMode = false;
 var ammo = 5;
+var textElement = document.getElementById("text");
 
 function createObjects(){
  var i;
@@ -196,7 +197,7 @@ monsterShot[i] = "Shot";
 ammo--;
 ammo++;
 }else{
-
+textElement.innerHtml("no more ammo");
 }
 }
 if(monsterShot[i] == "notShot"){
@@ -207,7 +208,7 @@ if(ammo > 0){
 monsterShot[i] = "bleeding";
 ammo--;
 }else{
-
+textElement.innerHtml("no more ammo");
 }
 }
 }}}}
@@ -222,7 +223,7 @@ monsterShot[i] = "Shot";
 ammo--;
 ammo++;
 }else{
-
+textElement.innerHtml("no more ammo");
 }
 }
 if(monsterShot[i] == "notShot"){
@@ -233,7 +234,7 @@ if(ammo > 0){
 monsterShot[i] = "bleeding";
 ammo--;
 }else{
-
+textElement.innerHtml("no more ammo");
 }
 }
 }}}}
