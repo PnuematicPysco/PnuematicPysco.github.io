@@ -23,10 +23,22 @@ position: absolute;
  <img id = "background" scr = "background.jpg">
  <img id = "gun" scr = "gun.png" width = "250" height = "250">
  <img id = "reloadGun" scr = "reload.png" width = "250" height = "250">
- <script scr = "animation.js"></script>
- <script scr = "engine.js"></script>
     <script>
-        
+       var gun = document.getElementById("gun.png");
+var reloadGun = document.getElementById("reload.png");
+
+reloadGun.style.display = "none";
+
+document.onkeydown = function (event) {
+      switch (event.keyCode) {
+        case 32:
+        reloadGun.style.display = "";
+        gun.style.display = "none";
+        setTimeoutFunction(function(){
+        reloadGun.style.display = "none";
+        gun.style.display = "";
+        }, 500);
+      }}; 
     </script>
  <script>
      var monsterId = [];
