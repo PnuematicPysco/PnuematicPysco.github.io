@@ -14,6 +14,7 @@ var rotate = 0;
 var challengeMode = false;
 var ammo = 5;
 var textElement = document.getElementById("text");
+var ammoText = document.getElementById("ammo");
 
 function createObjects(){
  var i;
@@ -111,6 +112,7 @@ var i;
 for(i = 0;i < totalMonsters;i++){
 var monster = document.getElementById(monsterId[i]);
 var monsterSize = 0;
+ammoText.innerHtml = "ammo: " + ammo;
 if(monsterZ[i] > z){
 var graphicZ = monsterZ[i] - z - 500;//make move and pos (num * 5) to balance it out
 if(graphicZ > 0){
