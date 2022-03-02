@@ -84,6 +84,8 @@ function createObjects(){
 }
 
 function createMonster(){
+    var i;
+for(i = 0;i < totalMonsters;i++){
  var monster = document.createElement("img");
   monster.setAttribute("id", "monster" + monsters);
   monster.setAttribute("scr", "monster1.png");
@@ -95,14 +97,8 @@ function createMonster(){
   monsterShot.push("notShot");
   monsterId.push("monster" + monsters);
   monsters++;
-}
-function loadMonsters(){
-var i;
-for(i = 0;i < totalMonsters;i++){
- createMonster();
- //you have to fillout the array on the proper place for the proper monster beforehand, exept for monsterId and monsters.
-}
-}
+}}
+
 
 function moveMonsters(){
 var i;
@@ -326,11 +322,11 @@ document.onkeydown = function (event) {
         case 32:
         shoot();
       }};
-loadMonsters();
+createMonster();
 createObjects();
 window.setInterval(fake3D, 1);
 window.setInterval(object3D, 1);
-window.setInterval(moveMonster, totalMonsters * 1000);
+window.setInterval(moveMonsters, totalMonsters * 1000);
     </script>
 </body>
 </html>
