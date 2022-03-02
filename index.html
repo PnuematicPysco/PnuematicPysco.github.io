@@ -58,7 +58,7 @@ var challengeMode = false;
 var ammo = 5;
 var textElement = document.getElementById("text");
 var ammoText = document.getElementById("ammo");
-
+     
 function createObjects(){
  var i;
  for(i = 0;i < objects;i++){
@@ -200,8 +200,8 @@ function object3D(){
 var i;
 for(i = 0;i < objects;i++){
 var object = document.getElementById(objectId[i]);
-if(objectsZ[i] > z){
-var graphicZ = objectsZ[i] - z - 500;//make move and pos (num * 5) to balance it out
+if(objectZ[i] > z){
+var graphicZ = objectZ[i] - z - 500;//make move and pos (num * 5) to balance it out
 if(graphicZ > 0){
 object.style.height = ""+graphicZ - graphicZ - graphicZ+"px";
 object.style.width = ""+graphicZ - graphicZ - graphicZ+"px";
