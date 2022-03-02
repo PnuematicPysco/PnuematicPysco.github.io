@@ -3,14 +3,16 @@ var monsterShot = [];
 var monsterX = [];
 var monsterZ = [];
 var monsters = 1;
-var totalMonsters = 1;
+var totalMonsters = Math.floor(Math.random() * 30);
 var objectId = [];
 var objectX = [];
 var objectZ = [];
-var objects = 1;
+var objects = Math.floor(Math.random() * 30);
 var x = 0;
 var z = 0;
 var rotate = 0;
+var challengeMode = false;
+var ammo = 5;
 
 function createObjects(){
  var i;
@@ -60,6 +62,7 @@ for(i = 0;i < totalMonsters;i++){
 function moveMonsters(){
 var i;
 for(i = 0;i < totalMonsters;i++){
+if(monsterShot[i] != "Shot"){
 if(monsterX[i] > x){
 var j;
 for(j = 0;j < 100;j++){
@@ -91,11 +94,12 @@ monsterZ[i]--;
 }
 }
 } 
-if(monsterShot[i] == "notShot"){
+}
 if(monsterZ[i] < z + 50){
 if(monsterX[i] < x + 50){
 if(monsterZ[i] > z - 50){
 if(monsterX[i] > x - 50){
+if(monsterShot[i] != "Shot"){
 var body = document.getElementById("world");
 body.style.display = "none";
 }}}}}
@@ -135,6 +139,11 @@ monster.style.transform = "translateX("+oppositeRotate + oppositeRotate + opposi
 if(monsterShot[i] == "Shot"){
 monster.style.scr = "bleedingMonster.png";
 monster.style.height = ""+monsterSize * 0.3+"px";
+monster.style.width = ""+monsterSize+"px";
+}
+if(monsterShot[i] == "bleeding"){
+monster.style.scr = "bleedingMonster.png";
+monster.style.height = ""+monsterSize+"px";
 monster.style.width = ""+monsterSize+"px";
 }
 }
@@ -181,16 +190,52 @@ var graphicZ = monsterZ[i] - z - 500;
 if(graphicZ > 0){
 if(Rotate2 > -10){
 if(Rotate2 < 10){
-if(monsterShot[i] == "notShot"){
+if(monsterShot[i] == "bleeding"){
+if(ammo > 0){
 monsterShot[i] = "Shot";
+ammo--;
+ammo++;
+}else{
+
+}
+}
+if(monsterShot[i] == "notShot"){
+if(challengeMode == false){
+monsterShot[i] = "Shot";
+}else{
+if(ammo > 0){
+monsterShot[i] = "bleeding";
+ammo--;
+}else{
+
+}
+}
 }}}}
 }else{
 var graphicZ = monsterZ[i] - z - 500;
 if(graphicZ > 0){
 if(oppositeRotate > -10){
 if(oppositeRotate < 10){
-if(monsterShot[i] == "notShot"){
+if(monsterShot[i] == "bleeding"){
+if(ammo > 0){
 monsterShot[i] = "Shot";
+ammo--;
+ammo++;
+}else{
+
+}
+}
+if(monsterShot[i] == "notShot"){
+if(challengeMode == false){
+monsterShot[i] = "Shot";
+}else{
+if(ammo > 0){
+monsterShot[i] = "bleeding";
+ammo--;
+}else{
+
+}
+}
 }}}}
 }
 }
@@ -212,6 +257,9 @@ document.addEventListener('keydown', (event) => {
  }
  if(name == "d"){
  x = x + 50;
+ }
+ if(name == "c"){
+ challengeMode = true;
  }
 }, false);
 
