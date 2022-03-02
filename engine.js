@@ -195,7 +195,7 @@ if(monsterShot[i] == "bleeding"){
 if(ammo > 0){
 monsterShot[i] = "Shot";
 ammo--;
-ammo++;
+ammo + 5;
 }else{
 textElement.innerHtml("no more ammo");
 }
@@ -221,7 +221,7 @@ if(monsterShot[i] == "bleeding"){
 if(ammo > 0){
 monsterShot[i] = "Shot";
 ammo--;
-ammo++;
+ammo + 5;
 }else{
 textElement.innerHtml("no more ammo");
 }
