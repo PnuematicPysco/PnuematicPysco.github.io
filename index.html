@@ -59,9 +59,9 @@ var ammo = 5;
 var textElement = document.getElementById("text");
 var ammoText = document.getElementById("ammo");
      
-function createObjects(){
- var i;
- for(i = 0;i < objects;i++){
+
+ var j;
+ for(j = 0;j < objects;j++){
  var object = document.createElement("img");
  object.setAttribute("id", "object" + i);
  object.setAttribute("style", "bottom: 200px");
@@ -81,9 +81,9 @@ function createObjects(){
   objectZ.push(randomZ);
   objectId.push("object" + i);
  }
-}
 
-function createMonster(){
+
+
     var i;
 for(i = 0;i < totalMonsters;i++){
  var monster = document.createElement("img");
@@ -97,7 +97,7 @@ for(i = 0;i < totalMonsters;i++){
   monsterShot.push("notShot");
   monsterId.push("monster" + monsters);
   monsters++;
-}}
+}
 
 
 function moveMonsters(){
@@ -322,8 +322,8 @@ document.onkeydown = function (event) {
         case 32:
         shoot();
       }};
-createMonster();
-createObjects();
+
+
 window.setInterval(fake3D, 1);
 window.setInterval(object3D, 1);
 window.setInterval(moveMonsters, totalMonsters * 1000);
