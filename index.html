@@ -20,9 +20,9 @@ position: absolute;
 <body>
     <p id = "text"></p>
     <p id = "ammo"></p>
- <img id = "background" scr = "background.jpg">
- <img id = "gun" scr = "gun.png" width = "250" height = "250">
- <img id = "reloadGun" scr = "reload.png" width = "250" height = "250">
+ <img id = "background" scr = "PnuematicPysco.github.com/background.jpg">
+ <img id = "gun" scr = "PnuematicPysco.github.com/gun.png" width = "250" height = "250">
+ <img id = "reloadGun" scr = "PnuematicPysco.github.com/reload.png" width = "250" height = "250">
     <script>
        var gun = document.getElementById("gun");
 var reloadGun = document.getElementById("reloadGun");
@@ -67,13 +67,13 @@ function createObjects(){
  object.setAttribute("style", "bottom: 200px");
  var randomNum = Math.floor(Math.random() * 2);
  if(randomNum == 0){
-  object.setAttribute("scr", "skyscrapper.png");
+  object.setAttribute("scr", "PnuematicPysco.github.com/skyscrapper.png");
  }
  if(randomNum == 1){
- object.setAttribute("scr", "burningcar.jpg");
+ object.setAttribute("scr", "PnuematicPysco.github.com/burningcar.jpg");
  }
  if(randomNum == 2){
-  object.setAttribute("scr", "wallPixel.jpeg");
+  object.setAttribute("scr", "PnuematicPysco.github.com/wallPixel.jpeg");
  }
   var randomX = Math.floor(Math.random() * 20000) - 10000;
   var randomZ = Math.floor(Math.random() * 20000) - 10000;
@@ -88,7 +88,7 @@ function createMonster(){
 for(i = 0;i < totalMonsters;i++){
  var monster = document.createElement("img");
   monster.setAttribute("id", "monster" + monsters);
-  monster.setAttribute("scr", "monster1.png");
+  monster.setAttribute("scr", "PnuematicPysco.github.com/monster1.png");
   monster.setAttribute("style", "bottom: 200px");
  var randomX = Math.floor(Math.random() * 20000) - 10000;
   var randomZ = Math.floor(Math.random() * 20000) - 10000;
@@ -179,12 +179,12 @@ var oppositeRotate = x - monsterX[i] - rotate;
 monster.style.transform = "translateX("+oppositeRotate + oppositeRotate + oppositeRotate+"px)";
 }
 if(monsterShot[i] == "Shot"){
-monster.style.scr = "bleedingMonster.png";
+monster.style.scr = "PnuematicPysco.github.com/bleedingMonster.png";
 monster.style.height = ""+monsterSize * 0.3+"px";
 monster.style.width = ""+monsterSize+"px";
 }
 if(monsterShot[i] == "bleeding"){
-monster.style.scr = "bleedingMonster.png";
+monster.style.scr = "PnuematicPysco.github.com/bleedingMonster.png";
 monster.style.height = ""+monsterSize+"px";
 monster.style.width = ""+monsterSize+"px";
 }
