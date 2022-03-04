@@ -203,21 +203,21 @@ var object = document.getElementById(objectId[i]);
 if(objectZ[i] > z){
 var graphicZ = objectZ[i] - z - 500;//make move and pos (num * 5) to balance it out
 if(graphicZ > 0){
-object.height = ""+graphicZ - graphicZ - graphicZ+"px";
-object.width = ""+graphicZ - graphicZ - graphicZ+"px";
+object.style.height = ""+graphicZ - graphicZ - graphicZ+"px";
+object.style.width = ""+graphicZ - graphicZ - graphicZ+"px";
 }else{
-object.height = ""+graphicZ + graphicZ + graphicZ+"px";
-object.width = ""+graphicZ + graphicZ + graphicZ+"px";
+object.style.height = ""+graphicZ + graphicZ + graphicZ+"px";
+object.style.width = ""+graphicZ + graphicZ + graphicZ+"px";
 }
 object.style.transform = "translateX("+x - objectX[i] - rotate+"px)";
 }else{
 var graphicZ = objectZ[i] - z + 500;//make move and pos (num * 5) to balance it out
 if(graphicZ > 0){
-object.height = ""+graphicZ - graphicZ - graphicZ+"px";
-object.width = ""+graphicZ - graphicZ - graphicZ+"px";
+object.style.height = ""+graphicZ - graphicZ - graphicZ+"px";
+object.style.width = ""+graphicZ - graphicZ - graphicZ+"px";
 }else{
-object.height = ""+graphicZ + graphicZ + graphicZ+"px";
-object.width = ""+graphicZ + graphicZ + graphicZ+"px";
+object.style.height = ""+graphicZ + graphicZ + graphicZ+"px";
+object.style.width = ""+graphicZ + graphicZ + graphicZ+"px";
 }
 var oppositeRotate = x - objectX[i] - rotate;
 object.style.transform = "translateX("+oppositeRotate + oppositeRotate + oppositeRotate+"px)";
