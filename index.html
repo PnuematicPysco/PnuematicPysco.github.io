@@ -157,24 +157,24 @@ ammoText.innerHtml = "ammo: " + ammo;
 if(monsterZ[i] > z){
 var graphicZ = monsterZ[i] - z - 500;//make move and pos (num * 5) to balance it out
 if(graphicZ > 0){
-monster.style.height = ""+graphicZ - graphicZ - graphicZ+"px";
-monster.style.width = ""+graphicZ - graphicZ - graphicZ+"px";
+monster.height = ""+graphicZ - graphicZ - graphicZ+"px";
+monster.width = ""+graphicZ - graphicZ - graphicZ+"px";
 monsterSize = graphicZ - graphicZ - graphicZ;
 }else{
-monster.style.height = ""+graphicZ + graphicZ + graphicZ+"px";
-monster.style.width = ""+graphicZ + graphicZ + graphicZ+"px";
+monster.height = ""+graphicZ + graphicZ + graphicZ+"px";
+monster.width = ""+graphicZ + graphicZ + graphicZ+"px";
 monsterSize = graphicZ + graphicZ + graphicZ;
 }
 monster.style.transform = "translateX("+x - monsterX[i] - rotate+"px)";
 }else{
 var graphicZ = monsterZ[i] - z + 500;//make move and pos (num * 5) to balance it out
 if(graphicZ > 0){
-object.style.height = ""+graphicZ - graphicZ - graphicZ+"px";
-monster.style.width = ""+graphicZ - graphicZ - graphicZ+"px";
+monster.height = ""+graphicZ - graphicZ - graphicZ+"px";
+monster.width = ""+graphicZ - graphicZ - graphicZ+"px";
 monsterSize = graphicZ - graphicZ - graphicZ;
 }else{
-monster.style.height = ""+graphicZ + graphicZ + graphicZ+"px";
-monster.style.width = ""+graphicZ + graphicZ + graphicZ+"px";
+monster.height = ""+graphicZ + graphicZ + graphicZ+"px";
+monster.width = ""+graphicZ + graphicZ + graphicZ+"px";
 monsterSize = graphicZ + graphicZ + graphicZ;
 }
 var oppositeRotate = x - monsterX[i] - rotate;
@@ -182,13 +182,13 @@ monster.style.transform = "translateX("+oppositeRotate + oppositeRotate + opposi
 }
 if(monsterShot[i] == "Shot"){
 monster.style.scr = "PnuematicPysco.github.io/bleedingMonster.png";
-monster.style.height = ""+monsterSize * 0.3+"px";
-monster.style.width = ""+monsterSize+"px";
+monster.height = ""+monsterSize * 0.3+"px";
+monster.width = ""+monsterSize+"px";
 }
 if(monsterShot[i] == "bleeding"){
 monster.style.scr = "PnuematicPysco.github.io/bleedingMonster.png";
-monster.style.height = ""+monsterSize+"px";
-monster.style.width = ""+monsterSize+"px";
+monster.height = ""+monsterSize+"px";
+monster.width = ""+monsterSize+"px";
 }
 }
 }
@@ -201,21 +201,21 @@ var object = document.getElementById(objectId[i]);
 if(objectZ[i] > z){
 var graphicZ = objectZ[i] - z - 500;//make move and pos (num * 5) to balance it out
 if(graphicZ > 0){
-object.style.height = ""+graphicZ - graphicZ - graphicZ+"px";
-object.style.width = ""+graphicZ - graphicZ - graphicZ+"px";
+object.height = ""+graphicZ - graphicZ - graphicZ+"px";
+object.width = ""+graphicZ - graphicZ - graphicZ+"px";
 }else{
-object.style.height = ""+graphicZ + graphicZ + graphicZ+"px";
-object.style.width = ""+graphicZ + graphicZ + graphicZ+"px";
+object.height = ""+graphicZ + graphicZ + graphicZ+"px";
+object.width = ""+graphicZ + graphicZ + graphicZ+"px";
 }
 object.style.transform = "translateX("+x - objectX[i] - rotate+"px)";
 }else{
 var graphicZ = objectZ[i] - z + 500;//make move and pos (num * 5) to balance it out
 if(graphicZ > 0){
-object.style.height = ""+graphicZ - graphicZ - graphicZ+"px";
-object.style.width = ""+graphicZ - graphicZ - graphicZ+"px";
+object.height = ""+graphicZ - graphicZ - graphicZ+"px";
+object.width = ""+graphicZ - graphicZ - graphicZ+"px";
 }else{
-object.style.height = ""+graphicZ + graphicZ + graphicZ+"px";
-object.style.width = ""+graphicZ + graphicZ + graphicZ+"px";
+object.height = ""+graphicZ + graphicZ + graphicZ+"px";
+object.width = ""+graphicZ + graphicZ + graphicZ+"px";
 }
 var oppositeRotate = x - objectX[i] - rotate;
 object.style.transform = "translateX("+oppositeRotate + oppositeRotate + oppositeRotate+"px)";
