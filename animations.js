@@ -1,5 +1,5 @@
-var gun = document.getElementById("gun.png");
-var reloadGun = document.getElementById("reload.png");
+var gun = document.getElementById("gun");
+var reloadGun = document.getElementById("reloadGun");
 
 reloadGun.style.display = "none";
 
