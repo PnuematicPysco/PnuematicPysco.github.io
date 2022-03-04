@@ -80,6 +80,7 @@ var ammoText = document.getElementById("ammo");
   objectX.push(randomX);
   objectZ.push(randomZ);
   objectId.push("object" + i);
+  document.body.appendChild(object);
  }
 
 
@@ -97,6 +98,7 @@ for(i = 0;i < totalMonsters;i++){
   monsterShot.push("notShot");
   monsterId.push("monster" + monsters);
   monsters++;
+  document.body.appendChild(monster);
 }
 
 
