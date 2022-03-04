@@ -144,8 +144,8 @@ if(monsterX[i] < x + 50){
 if(monsterZ[i] > z - 50){
 if(monsterX[i] > x - 50){
 if(monsterShot[i] != "Shot"){
-var body = document.getElementById("world");
-body.style.display = "none";
+var bodyElement = document.getElementByTagName("body");
+bodyElement.style.display = "none";
 }}}}}
 }
 
