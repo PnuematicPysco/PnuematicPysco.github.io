@@ -21,9 +21,9 @@ position: absolute;
 <body>
     <p id = "text"></p>
     <p id = "ammo"></p>
- <img id = "background" scr = "PnuematicPysco.github.io/background.jpg">
- <img id = "gun" scr = "PnuematicPysco.github.io/gun.png" width = "250" height = "250">
- <img id = "reloadGun" scr = "PnuematicPysco.github.io/reload.png" width = "250" height = "250">
+ <img id = "background" src = "PnuematicPysco.github.io/background.jpg">
+ <img id = "gun" src = "PnuematicPysco.github.io/gun.png" width = "250" height = "250">
+ <img id = "reloadGun" src = "PnuematicPysco.github.io/reload.png" width = "250" height = "250">
     <script>
        var gun = document.getElementById("gun");
 var reloadGun = document.getElementById("reloadGun");
@@ -68,13 +68,13 @@ var ammoText = document.getElementById("ammo");
  object.setAttribute("style", "bottom: 200px");
  var randomNum = Math.floor(Math.random() * 2);
  if(randomNum == 0){
-  object.setAttribute("scr", "PnuematicPysco.github.io/skyscrapper.png");
+  object.setAttribute("src", "PnuematicPysco.github.io/skyscrapper.png");
  }
  if(randomNum == 1){
- object.setAttribute("scr", "PnuematicPysco.github.io/burningcar.jpg");
+ object.setAttribute("src", "PnuematicPysco.github.io/burningcar.jpg");
  }
  if(randomNum == 2){
-  object.setAttribute("scr", "PnuematicPysco.github.io/wallPixel.jpeg");
+  object.setAttribute("src", "PnuematicPysco.github.io/wallPixel.jpeg");
  }
   var randomX = Math.floor(Math.random() * 20000) - 10000;
   var randomZ = Math.floor(Math.random() * 20000) - 10000;
@@ -90,7 +90,7 @@ var ammoText = document.getElementById("ammo");
 for(i = 0;i < totalMonsters;i++){
  var monster = document.createElement("img");
   monster.setAttribute("id", "monster" + monsters);
-  monster.setAttribute("scr", "PnuematicPysco.github.io/monster1.png");
+  monster.setAttribute("src", "PnuematicPysco.github.io/monster1.png");
   monster.setAttribute("style", "bottom: 200px");
  var randomX = Math.floor(Math.random() * 20000) - 10000;
   var randomZ = Math.floor(Math.random() * 20000) - 10000;
@@ -182,12 +182,12 @@ var oppositeRotate = x - monsterX[i] - rotate;
 $('#monster + i').style('transform', 'translateX(' + oppositeRotate + oppositeRotate + oppositeRotate + ')');
 }
 if(monsterShot[i] == "Shot"){
-$("#monster" + i).attr("scr", "PnuematicPysco.github.io/bleedingMonster.png");
+$("#monster" + i).attr("src", "PnuematicPysco.github.io/bleedingMonster.png");
 $("#monster" + i).height(monsterSize * 0.3);
 $("#monster" + i).width(monsterSize);
 }
 if(monsterShot[i] == "bleeding"){
-$("#monster" + i).attr("scr", "PnuematicPysco.github.io/bleedingMonster.png");
+$("#monster" + i).attr("src", "PnuematicPysco.github.io/bleedingMonster.png");
 $("#monster" + i).width(monsterSize);
 $("#monster" + i).height(monsterSize);
 }
