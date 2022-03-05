@@ -136,7 +136,7 @@ $("#monster" + i).width(graphicZ + graphicZ + graphicZ);
 monsterSize = graphicZ + graphicZ + graphicZ;
 }
 var oppositeRotate = x - monsterX[i] - rotate;
-monster.style.transform =  'translateX(' + oppositeRotate + oppositeRotate + oppositeRotate + ')px';
+monster.style.transform =  'translateX(' + oppositeRotate + oppositeRotate + oppositeRotate + 'px)';
 }
 if(monsterShot[i] == "Shot"){
 $("#monster" + i).attr("src", "PnuematicPysco.github.io/bleedingMonster.png");
@@ -165,7 +165,7 @@ $("#object" + i).height(graphicZ - graphicZ - graphicZ);
 $("#object" + i).height(graphicZ + graphicZ + graphicZ);
 $("#object" + i).width(graphicZ + graphicZ + graphicZ);
 }
-object.style.transform = 'translateX(' + x - objectX[i] - rotate + ')';
+object.style.transform = 'translateX(' + x - objectX[i] - rotate + 'px)';
 }else{
 var graphicZ = objectZ[i] - z + 500;//make move and pos (num * 5) to balance it out
 if(graphicZ > 0){
@@ -176,7 +176,7 @@ $("#object" + i).height(graphicZ + graphicZ + graphicZ);
 $("#object" + i).width(graphicZ + graphicZ + graphicZ);
 }
 var oppositeRotate = x - objectX[i] - rotate;
-object.style.transform = 'translateX(' + oppositeRotate + oppositeRotate + oppositeRotate + ')';
+object.style.transform = 'translateX(' + oppositeRotate + oppositeRotate + oppositeRotate + 'px)';
 }
 }
 }
