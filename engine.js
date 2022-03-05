@@ -165,7 +165,7 @@ $("#object" + i).height(graphicZ - graphicZ - graphicZ);
 $("#object" + i).height(graphicZ + graphicZ + graphicZ);
 $("#object" + i).width(graphicZ + graphicZ + graphicZ);
 }
-$('#object' + i).css('transform', 'translateX(' + x - objectX[i] - rotate + ')');
+object.style.transform = 'translateX(' + x - objectX[i] - rotate + ')';
 }else{
 var graphicZ = objectZ[i] - z + 500;//make move and pos (num * 5) to balance it out
 if(graphicZ > 0){
@@ -176,7 +176,7 @@ $("#object" + i).height(graphicZ + graphicZ + graphicZ);
 $("#object" + i).width(graphicZ + graphicZ + graphicZ);
 }
 var oppositeRotate = x - objectX[i] - rotate;
-$('#object' + i).css('transform', 'translateX(' + oppositeRotate + oppositeRotate + oppositeRotate + ')');
+object.style.transform = 'translateX(' + oppositeRotate + oppositeRotate + oppositeRotate + ')';
 }
 }
 }
